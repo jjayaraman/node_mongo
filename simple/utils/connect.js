@@ -1,14 +1,12 @@
 const { MongoClient } = require('mongodb');
-
-const URI = process.env.mongodb_uri || 'mongodb://localhost:27017'
+const config = require('./config.js')
 
 const options = {
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
     // userNewUrlParser: true,
-    // useUnifiedTopology: true
+    // loggerLevel: "debug",
 }
-console.log("uri : ", URI);
 
-const client = new MongoClient(URI, options)
+const client = new MongoClient(config.uri, options)
 
 module.exports = client;

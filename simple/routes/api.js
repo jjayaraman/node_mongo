@@ -9,8 +9,13 @@ router.get('/', function (req, res, next) {
 });
 
 router.get("/listings", async (req, res) => {
-  const data = await listingService.listings();
-  res.json(data);
+
+  await listingService.listings()
+    .then(data => {
+      res.json(data)
+    }).catch(er => {
+      res.json({ error: true })
+    });
 })
 
 
