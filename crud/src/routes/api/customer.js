@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var { listings } = require('./../service/listings')
+var { listings } = require('../../service/listings')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
