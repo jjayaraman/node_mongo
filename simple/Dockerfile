@@ -1,8 +1,8 @@
-FROM node:alpine
+FROM node:current-alpine3.10
 WORKDIR /usr/src/app
-COPY ["package*.json", "./"]
+COPY [".", "."]
 RUN npm install 
 EXPOSE 3000
 USER node
-CMD ["npm" "start"]
+CMD ["npm", "start"]
 
