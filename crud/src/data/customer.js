@@ -1,14 +1,14 @@
-var client = require('../utils/connect');
+var client = require('./utils/connect');
 
 
-const listings = () => {
+exports.getCustomers = () => {
 
     return new Promise(async (resolve, reject) => {
 
         try {
             const con = await client.connect();
-            const db = con.db('airbnb');
-            const listings = db.collection("listings");
+            const db = con.db('mns');
+            const listings = db.collection("customer");
             const query = {};
             const LIMIT = 10;
             listings.find(query).limit(LIMIT).toArray((err, docs) => {
@@ -24,5 +24,3 @@ const listings = () => {
     })
 }
 
-
-module.exports = { listings }

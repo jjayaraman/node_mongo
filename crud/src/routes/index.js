@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* Home page - Redirect to view all customers */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/customer/viewall')
 });
 
 
