@@ -1,8 +1,8 @@
-var customer = require('../data/customer')
+var customerDao = require('../data/customerDao')
 
 
-exports.getCustomers = (req, res) => {
-    customer.getCustomers()
+exports.viewAll = (req, res) => {
+    customerDao.viewAll()
         .then(data => {
             res.render('customer/viewAll', { data })
         })

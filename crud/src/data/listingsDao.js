@@ -1,7 +1,7 @@
 var client = require('./utils/connect');
 
 
-const listings = () => {
+exports.viewAll = () => {
 
     return new Promise(async (resolve, reject) => {
 
@@ -23,6 +23,3 @@ const listings = () => {
         }
     })
 }
-
-
-module.exports = { listings }

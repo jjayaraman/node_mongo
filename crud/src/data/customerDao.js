@@ -1,7 +1,7 @@
 var client = require('./utils/connect');
 
 
-exports.getCustomers = () => {
+exports.viewAll = () => {
 
     return new Promise(async (resolve, reject) => {
 
