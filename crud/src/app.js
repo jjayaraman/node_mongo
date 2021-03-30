@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
 var customerRouter = require('./routes/customer')
 var listingsRouter = require('./routes/listings')
 
@@ -22,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use("/styles/css", express.static(path.join(__dirname, "./../node_modules/bootstrap/dist/css")));
 
-app.use('/', indexRouter);
+// Routes
 app.use('/customer', customerRouter);
 app.use('/listings', listingsRouter);
 
