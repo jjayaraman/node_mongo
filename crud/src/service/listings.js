@@ -10,7 +10,7 @@ const listings = () => {
             const db = con.db('airbnb');
             const listings = db.collection("listings");
             const query = {};
-            const LIMIT = 100;
+            const LIMIT = 10;
             listings.find(query).limit(LIMIT).toArray((err, docs) => {
                 if (err) {
                     reject(err)
