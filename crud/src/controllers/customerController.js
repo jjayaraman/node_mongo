@@ -2,7 +2,7 @@ var customerDao = require('../data/customerDao')
 
 
 exports.viewAll = (req, res) => {
-    customerDao.viewAll()
+    customerDao.viewAll(req)
         .then(data => {
             res.render('customer/viewAll', { data })
         })

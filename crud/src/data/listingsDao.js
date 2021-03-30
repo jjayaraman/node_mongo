@@ -1,13 +1,12 @@
 var client = require('./utils/connect');
 
 
-exports.viewAll = () => {
+exports.viewAll = (req) => {
 
     return new Promise(async (resolve, reject) => {
 
         try {
-            const con = await client.connect();
-            const db = con.db('airbnb');
+            const db = req.app.locals.db_airbnb;
             const listings = db.collection("listings");
             const query = {};
             const LIMIT = 10;

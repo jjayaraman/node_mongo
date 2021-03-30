@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var { mongoClient } = require('../src/data/utils/connect')
 
 var customerRouter = require('./routes/customer')
 var listingsRouter = require('./routes/listings')
@@ -40,5 +41,13 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Connect to mongoDB and add the db to locals for reuse in all needed routes later
+mongoClient.then(client => {
+  app.locals.db_mns = client.db('mns')
+  app.locals.db_airbnb = client.db('airbnb')
+}).catch(err => {
+  res.render('error');
+})
 
 module.exports = app;

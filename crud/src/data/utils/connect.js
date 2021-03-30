@@ -5,6 +5,4 @@ const options = {
     useUnifiedTopology: true,
 }
 
-const client = new MongoClient(config.uri, options)
-
-module.exports = client;
+exports.mongoClient = MongoClient.connect(config.uri, options);
