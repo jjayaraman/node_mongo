@@ -1,4 +1,4 @@
-var customerDao = require('../data/customerDao')
+var customerDao = require('../dao/customerDao')
 
 
 exports.viewAll = (req, res) => {

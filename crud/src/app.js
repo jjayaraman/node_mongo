@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var { mongoClient } = require('../src/data/utils/connect')
+var { mongoClient } = require('./dao/utils/connect')
 
 var customerRouter = require('./routes/customer')
 var listingsRouter = require('./routes/listings')
