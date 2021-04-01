@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.0120" tests="1" failures="0">
-  <testsuite name="Root Suite" timestamp="2021-04-01T07:38:04" tests="0" time="0.0000" failures="0">
+<testsuites name="Mocha Tests" time="0.0110" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-04-01T08:16:16" tests="0" time="0.0000" failures="0">
   </testsuite>
-  <testsuite name="Test suite for Customer Dao" timestamp="2021-04-01T07:38:04" tests="1" file="/Users/jay/git_jay/node_mongo/crud/test/dao/customerDao.test.js" time="0.0120" failures="0">
-    <testcase name="Test suite for Customer Dao should pass" time="0.0120" classname="should pass">
+  <testsuite name="Test suite for Customer Dao" timestamp="2021-04-01T08:16:16" tests="2" file="/Users/jay/git_jay/node_mongo/crud/test/dao/customerDao.test.js" time="0.0110" failures="1">
+    <testcase name="Test suite for Customer Dao should pass" time="0.0090" classname="should pass">
+    </testcase>
+    <testcase name="Test suite for Customer Dao find a customer by id" time="0.0020" classname="find a customer by id">
+      <failure message="expected 2 to equal 1" type="AssertionError"><![CDATA[AssertionError: expected 2 to equal 1
+    at Context.<anonymous> (test/dao/customerDao.test.js:25:16)
+    at processTicksAndRejections (node:internal/process/task_queues:94:5)]]></failure>
     </testcase>
   </testsuite>
 </testsuites>

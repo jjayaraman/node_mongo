@@ -22,3 +22,24 @@ exports.viewAll = (db) => {
     })
 }
 
+exports.findById = (db, id) => {
+
+    return new Promise(async (resolve, reject) => {
+
+        try {
+            const listings = db.collection("customer");
+            const query = { id };
+            listings.find(query).toArray((err, doc) => {
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(doc);
+                }
+            })
+        } catch (error) {
+            reject(error);
+        }
+    })
+
+}
+
