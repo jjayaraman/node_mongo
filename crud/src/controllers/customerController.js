@@ -15,3 +15,17 @@ exports.viewAll = (req, res) => {
 exports.form = (req, res) => {
     res.render('customer/create')
 }
+
+
+exports.viewById = (req, res) => {
+    const db = req.app.locals.db_mns;
+    var id = parseInt(req.params.id);
+    customerDao.findById(db, id)
+        .then(data => {
+            console.log('data >>  ', data);
+            res.render('customer/view', { data })
+        })
+        .catch(err => {
+            res.render('customer/view', { error: true })
+        });
+}

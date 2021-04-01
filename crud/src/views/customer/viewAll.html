@@ -17,7 +17,7 @@
     <tbody>
         {{#each data}}
         <tr>
-            <td>{{this.id}}</td>
+            <td><a href='/customer/view/{{this.id}}'>{{this.id}}</a></td>
             <td>{{this.first_name}}</td>
             <td>{{this.last_name}}</td>
             <td>{{this.email}}</td>

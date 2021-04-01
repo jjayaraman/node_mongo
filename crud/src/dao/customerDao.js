@@ -28,12 +28,12 @@ exports.findById = (db, id) => {
 
         try {
             const listings = db.collection("customer");
-            const query = { id };
+            const query = { id: id };
             listings.find(query).toArray((err, doc) => {
                 if (err) {
                     reject(err)
                 } else {
-                    resolve(doc);
+                    resolve(doc[0]);
                 }
             })
         } catch (error) {
