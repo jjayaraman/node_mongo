@@ -1,12 +1,11 @@
 var client = require('./utils/connect');
 
 
-exports.viewAll = (req) => {
+exports.viewAll = (db) => {
 
     return new Promise(async (resolve, reject) => {
 
         try {
-            const db = req.app.locals.db_mns;
             const listings = db.collection("customer");
             const query = {};
             const LIMIT = 10;

@@ -2,7 +2,8 @@ var customerDao = require('../dao/customerDao')
 
 
 exports.viewAll = (req, res) => {
-    customerDao.viewAll(req)
+    const db = req.app.locals.db_mns;
+    customerDao.viewAll(db)
         .then(data => {
             res.render('customer/viewAll', { data })
         })
