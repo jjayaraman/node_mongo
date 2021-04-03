@@ -26,6 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/customer', customerRouter);
 app.use('/listings', listingsRouter);
 
+
+app.get('/', (req, res) => {
+  res.redirect('/customer/viewall')
+})
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
