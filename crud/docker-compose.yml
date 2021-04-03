@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  database:
+    image: "mongo"
+    ports:
+      - 27000:27017
+    volumes:
+      - dbdata:/data/db
+
+  web:
+    image: node:current-alpine
+    depends_on: ["database"]
+    working_dir: "/usr/app/src"
+    command: ["npm", "start"]
+    ports:
+      - 3000:3000
+    # volumes:
+    # - ./:/usr/app/src
+    # - node_modules:/usr/app/src/node_modules
